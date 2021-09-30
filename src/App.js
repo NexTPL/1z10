@@ -1,24 +1,24 @@
 import './App.css';
+import Player from './components/Player.jsx';
+import Timer from './components/Timer.jsx';
 
 function App() {
 	return (
 		<div className='App'>
 			<header></header>
-			<div class='players'>
-				<div class='player'></div>
-				<div class='player'></div>
-				<div class='player'></div>
-				<div class='player'></div>
-				<div class='player'></div>
-				<div class='player'></div>
-				<div class='player'></div>
-				<div class='player'></div>
-				<div class='player'></div>
-				<div class='player'></div>
+			<div className='players'>
+				<Player></Player>
+				<Player></Player>
+				<Player></Player>
+				<Player></Player>
+				<Player></Player>
+				<Player></Player>
+				<Player></Player>
+				<Player></Player>
+				<Player></Player>
+				<Player></Player>
 			</div>
-			<div className='timer'>
-				<p>Timer</p>
-			</div>
+			<Timer></Timer>
 			<footer></footer>
 		</div>
 	);
