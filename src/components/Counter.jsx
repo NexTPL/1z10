@@ -1,9 +1,9 @@
 import '../App.css';
 
-function Counter() {
+function Counter(props) {
 	return (
 		<div className='points'>
-			<p>####</p>
+			<p>{props.score}</p>
 		</div>
 	);
 }

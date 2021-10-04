@@ -1,16 +1,19 @@
 import '../App.css';
-import Counter from './Counter';
+import Counter from './Counter.jsx';
+import Live from './Live.jsx';
 
-function Player() {
+function Player(props) {
 	return (
 		<div className='player_container'>
 			<div className='player'>
 				<div className='info'>
-					<p>##</p>
-					
+					<p>{props.name}</p>
 				</div>
+				<Live></Live>
+				<Live></Live>
+				<Live></Live>
 			</div>
-			<Counter></Counter>
+			<Counter score={props.score}></Counter>
 		</div>
 	);
 }

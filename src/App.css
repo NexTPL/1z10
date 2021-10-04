@@ -75,3 +75,13 @@ footer {
 	border-radius: 0.5em;
 	width: 3em;
 }
+
+.live {
+	display: inline-flex;
+	width: 2.5em;
+	height: 4em;
+	background-color: #47b62b;
+	border-radius: 0.2em;
+	margin: 0.2em;
+	margin-top: 1em;
+}
