@@ -85,3 +85,13 @@ footer {
 	margin: 0.2em;
 	margin-top: 1em;
 }
+
+.no-live {
+	display: inline-flex;
+	width: 2.5em;
+	height: 4em;
+	background-color: #292929;
+	border-radius: 0.2em;
+	margin: 0.2em;
+	margin-top: 1em;
+}

@@ -5,17 +5,13 @@ import Timer from './components/Timer.js';
 import Data from './Data.json';
 
 let Players = Data.players;
-function App() {
+
+function 1z10() {
 	const [PlayerData, NewPlayerData] = useState(Players);
-
-	function remove() {
-		Players.p1.lives.shift();
-		update();
+	function RemoveLife() {
+		Players = Players.p1.lives.shift();
+		NewPlayerData(Players);
 	}
-	const update = () => {
-		NewPlayerData({ ...Players });
-	};
-
 	return (
 		<div className='App'>
 			<header></header>
@@ -32,10 +28,8 @@ function App() {
 				<Player name={PlayerData.p10.name} score={PlayerData.p10.score} lives={PlayerData.p10.lives}></Player>
 			</div>
 			<Timer></Timer>
-			<button onClick={remove}>click me</button>
+			<button onClick={RemoveLife}>Click Me</button>
 			<footer></footer>
 		</div>
 	);
 }
-
-export default App;
