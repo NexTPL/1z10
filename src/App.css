@@ -16,6 +16,7 @@ body {
 	display: flexbox;
 	margin: auto;
 	margin-top: 7em;
+	flex-wrap: nowrap;
 }
 
 .player_container {
