@@ -1,9 +1,9 @@
 import '../App.css';
 
-function Timer() {
+function Timer(props) {
 	return (
 		<div className='timer'>
-			<p>Timer</p>
+			<p>{props.time}</p>
 		</div>
 	);
 }

@@ -1,19 +1,6 @@
 body {
 	background-color: rgb(1, 4, 37);
 }
-header {
-	height: 2em;
-	background-color: rgba(0, 0, 0, 0.5);
-}
-
-footer {
-	background-color: rgba(0, 0, 0, 0.5);
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 2em;
-}
 
 * {
 	margin: 0;
@@ -36,10 +23,15 @@ footer {
 	display: inline-flex;
 	flex-direction: column;
 }
+.player_container_off {
+	display: inline-flex;
+	flex-direction: column;
+}
+
 .player {
 	width: 10em;
 	height: 15em;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.4);
 	border-radius: 1em;
 }
 .info {
@@ -65,15 +57,15 @@ footer {
 
 .timer {
 	background-color: rgba(0, 0, 0, 0.342);
-	padding: 0.5em;
+	padding: 0.1em;
 	margin: auto;
 	margin-top: 2em;
 	width: fit-content;
 	font-family: 'Roboto', sans-serif;
 	color: #ffffff;
-	font-size: 4em;
-	border-radius: 0.5em;
-	width: 3em;
+	font-size: 8em;
+	border-radius: 0.2em;
+	width: 1.5em;
 }
 
 .live {

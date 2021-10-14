@@ -1,52 +1,52 @@
 {
 	"players": {
 		"p1": {
-			"name": "P1",
+			"name": "1",
 			"score": 0,
 			"lives": [1, 1, 1]
 		},
 		"p2": {
-			"name": "P2",
+			"name": "2",
 			"score": 0,
 			"lives": [1, 1, 1]
 		},
 		"p3": {
-			"name": "P3",
+			"name": "3",
 			"score": 0,
 			"lives": [1, 1, 1]
 		},
 		"p4": {
-			"name": "P4",
+			"name": "4",
 			"score": 0,
 			"lives": [1, 1, 1]
 		},
 		"p5": {
-			"name": "P5",
+			"name": "5",
 			"score": 0,
 			"lives": [1, 1, 1]
 		},
 		"p6": {
-			"name": "P6",
+			"name": "6",
 			"score": 0,
 			"lives": [1, 1, 1]
 		},
 		"p7": {
-			"name": "P7",
+			"name": "7",
 			"score": 0,
 			"lives": [1, 1, 1]
 		},
 		"p8": {
-			"name": "P8",
+			"name": "8",
 			"score": 0,
 			"lives": [1, 1, 1]
 		},
 		"p9": {
-			"name": "P9",
+			"name": "9",
 			"score": 0,
 			"lives": [1, 1, 1]
 		},
 		"p10": {
-			"name": "P10",
+			"name": "10",
 			"score": 0,
 			"lives": [1, 1, 1]
 		}
