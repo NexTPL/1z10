@@ -1,10 +1,11 @@
 import '../App.css';
 
 function Counter(props) {
-	return (
-		<div className='points'>
-			<p>{props.score}</p>
-		</div>
-	);
+	if (props.left <= 3) {
+		return <div className='points'>{props.score}</div>;
+	} else {
+		return <div></div>;
+	}
 }
+
 export default Counter;

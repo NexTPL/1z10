@@ -1,20 +1,20 @@
 import '../App.css';
-import Counter from './Counter.js';
 import Live from './Live.js';
+import Counter from './Counter.js';
 
 function Player(props) {
-	if (props.lives.length !== 0) {
+	if (props.lives.length !== 0 || props.place <= 3) {
 		return (
 			<div className='player_container'>
 				<div className='player'>
 					<div className='info'>
 						<p>{props.name}</p>
 					</div>
-					<Live live={props.lives[0]}></Live>
+					<Counter score={props.score} left={props.left}></Counter>
 					<Live live={props.lives[1]}></Live>
 					<Live live={props.lives[2]}></Live>
+					<Live live={props.lives[3]}></Live>
 				</div>
-				<Counter score={props.score}></Counter>
 			</div>
 		);
 	} else {
