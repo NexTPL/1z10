@@ -3,6 +3,9 @@ import './App.css';
 import Player from './components/Player.js';
 import Timer from './components/Timer.js';
 import Data from './Data.json';
+import intro_sound from './audio/intro.mp3';
+import good_sound from './audio/good.mp3';
+import bad_sound from './audio/bad.mp3';
 
 let Players = Data.players;
 let c_player;
@@ -10,10 +13,16 @@ let l_players = 10;
 let isTimerRunning = false;
 let time = 0;
 let timer_id = null;
+const intro = new Audio(intro_sound);
+const good = new Audio(good_sound);
+const bad = new Audio(bad_sound);
+intro.volume = 0.5;
+good.volume = 0.5;
+bad.volume = 0.5;
+intro.loop = true;
 
 function App() {
 	const [PlayerData, NewPlayerData] = useState(Players);
-
 	window.onkeyup = function (e) {
 		// Players
 		if (e.which === 49) c_player = Players.p1;
@@ -31,6 +40,7 @@ function App() {
 			time = 10;
 			timer_id = setInterval(timer, 1000);
 			isTimerRunning = true;
+
 			update();
 		}
 		if (e.which === 32 && isTimerRunning) {
@@ -38,8 +48,10 @@ function App() {
 			isTimerRunning = false;
 			if (l_players <= 3) c_player.score += 10;
 			time = 0;
+			good.play();
 			update();
 		}
+		if (e.which === 18) intro.play();
 	};
 
 	const timer = () => {
@@ -49,6 +61,7 @@ function App() {
 			isTimerRunning = false;
 			clearInterval(timer_id);
 			removeLife();
+			bad.play();
 		}
 	};
 
