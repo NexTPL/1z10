@@ -3,22 +3,35 @@ import Live from './Live.js';
 import Counter from './Counter.js';
 
 function Player(props) {
-	if (props.lives.length !== 0 || props.place <= 3) {
-		return (
-			<div className='player_container'>
+	if (props.player.lives.length !== 0 || props.player.place <= 3) {
+		if (props.left > 3) {
+			return (
+				<div className='player'>
+					<Live live={props.player.lives[1]}></Live>
+					<Live live={props.player.lives[2]}></Live>
+					<Live live={props.player.lives[3]}></Live>
+					<div className='info'>
+						<p className='name'>{props.player.name}</p>
+						<p className='nr'>{props.player.nr}</p>
+					</div>
+				</div>
+			);
+		} else {
+			return (
 				<div className='player'>
 					<div className='info'>
-						<p>{props.name}</p>
+						<p className='nr'>{props.player.nr}</p>
+						<p className='name'>{props.player.name}</p>
 					</div>
-					<Counter score={props.score} left={props.left}></Counter>
-					<Live live={props.lives[1]}></Live>
-					<Live live={props.lives[2]}></Live>
-					<Live live={props.lives[3]}></Live>
+					<Counter score={props.score}></Counter>
+					<Live live={props.player.lives[1]}></Live>
+					<Live live={props.player.lives[2]}></Live>
+					<Live live={props.player.lives[3]}></Live>
 				</div>
-			</div>
-		);
+			);
+		}
 	} else {
-		return <div className='player_container_off'></div>;
+		return <div></div>;
 	}
 }
 export default Player;

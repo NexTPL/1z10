@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import './App.css';
-import Player from './components/Player.js';
 import Timer from './components/Timer.js';
 import Data from './Data.json';
 import intro_sound from './audio/intro.mp3';
@@ -8,6 +7,7 @@ import good_sound from './audio/good.mp3';
 import bad_sound from './audio/bad.mp3';
 import nolives_sound from './audio/nolives.mp3';
 import bg from './video/bg.mp4';
+import PlayerContainer from './components/PlayerContainer';
 
 let Players = Data.players;
 let c_player;
@@ -40,7 +40,7 @@ function App() {
 		if (e.which === 57 && !running) c_player = Players.p9;
 		if (e.which === 48 && !running) c_player = Players.p10;
 		// Run
-		if (e.which === 17 && !isTimerRunning) {
+		if (e.which === 17 && !isTimerRunning && c_player !== undefined) {
 			time = 10;
 			timer_id = setInterval(timer, 1000);
 			isTimerRunning = true;
@@ -58,6 +58,7 @@ function App() {
 			update();
 		}
 		if (e.which === 18) intro.play();
+		update();
 	};
 
 	const timer = () => {
@@ -146,16 +147,16 @@ function App() {
 			<video src={video} autoPlay loop muted className='video'></video>
 			<div className='App'>
 				<div className='players'>
-					<Player name={PlayerData.p1.name} score={PlayerData.p1.score} lives={PlayerData.p1.lives} left={l_players} place={PlayerData.p1.place}></Player>
-					<Player name={PlayerData.p2.name} score={PlayerData.p2.score} lives={PlayerData.p2.lives} left={l_players} place={PlayerData.p2.place}></Player>
-					<Player name={PlayerData.p3.name} score={PlayerData.p3.score} lives={PlayerData.p3.lives} left={l_players} place={PlayerData.p3.place}></Player>
-					<Player name={PlayerData.p4.name} score={PlayerData.p4.score} lives={PlayerData.p4.lives} left={l_players} place={PlayerData.p4.place}></Player>
-					<Player name={PlayerData.p5.name} score={PlayerData.p5.score} lives={PlayerData.p5.lives} left={l_players} place={PlayerData.p5.place}></Player>
-					<Player name={PlayerData.p6.name} score={PlayerData.p6.score} lives={PlayerData.p6.lives} left={l_players} place={PlayerData.p6.place}></Player>
-					<Player name={PlayerData.p7.name} score={PlayerData.p7.score} lives={PlayerData.p7.lives} left={l_players} place={PlayerData.p7.place}></Player>
-					<Player name={PlayerData.p8.name} score={PlayerData.p8.score} lives={PlayerData.p8.lives} left={l_players} place={PlayerData.p8.place}></Player>
-					<Player name={PlayerData.p9.name} score={PlayerData.p9.score} lives={PlayerData.p9.lives} left={l_players} place={PlayerData.p9.place}></Player>
-					<Player name={PlayerData.p10.name} score={PlayerData.p10.score} lives={PlayerData.p10.lives} left={l_players} place={PlayerData.p10.place}></Player>
+					<PlayerContainer left={l_players} player={PlayerData.p1} c_player={c_player}></PlayerContainer>
+					<PlayerContainer left={l_players} player={PlayerData.p2} c_player={c_player}></PlayerContainer>
+					<PlayerContainer left={l_players} player={PlayerData.p3} c_player={c_player}></PlayerContainer>
+					<PlayerContainer left={l_players} player={PlayerData.p4} c_player={c_player}></PlayerContainer>
+					<PlayerContainer left={l_players} player={PlayerData.p5} c_player={c_player}></PlayerContainer>
+					<PlayerContainer left={l_players} player={PlayerData.p6} c_player={c_player}></PlayerContainer>
+					<PlayerContainer left={l_players} player={PlayerData.p7} c_player={c_player}></PlayerContainer>
+					<PlayerContainer left={l_players} player={PlayerData.p8} c_player={c_player}></PlayerContainer>
+					<PlayerContainer left={l_players} player={PlayerData.p9} c_player={c_player}></PlayerContainer>
+					<PlayerContainer left={l_players} player={PlayerData.p10} c_player={c_player}></PlayerContainer>
 				</div>
 				<Timer time={time}></Timer>
 			</div>

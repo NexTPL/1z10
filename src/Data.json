@@ -1,61 +1,71 @@
 {
 	"players": {
 		"p1": {
-			"name": "1",
+			"name": "######",
+			"nr": "1",
 			"score": 0,
 			"lives": [1, 1, 1, 1],
 			"place": "none"
 		},
 		"p2": {
-			"name": "2",
+			"name": "######",
+			"nr": "2",
 			"score": 0,
 			"lives": [1, 1, 1, 1],
 			"place": "none"
 		},
 		"p3": {
-			"name": "3",
+			"name": "######",
+			"nr": "3",
 			"score": 0,
 			"lives": [1, 1, 1, 1],
 			"place": "none"
 		},
 		"p4": {
-			"name": "4",
+			"name": "######",
+			"nr": "4",
 			"score": 0,
 			"lives": [1, 1, 1, 1],
 			"place": "none"
 		},
 		"p5": {
-			"name": "5",
+			"name": "######",
+			"nr": "5",
 			"score": 0,
 			"lives": [1, 1, 1, 1],
 			"place": "none"
 		},
 		"p6": {
-			"name": "6",
+			"name": "######",
+			"nr": "6",
 			"score": 0,
 			"lives": [1, 1, 1, 1],
 			"place": "none"
 		},
 		"p7": {
-			"name": "7",
+			"name": "######",
+			"nr": "7",
 			"score": 0,
 			"lives": [1, 1, 1, 1],
 			"place": "none"
 		},
 		"p8": {
-			"name": "8",
+			"name": "######",
+			"nr": "8",
 			"score": 0,
 			"lives": [1, 1, 1, 1],
 			"place": "none"
 		},
 		"p9": {
-			"name": "9",
+			"name": "######",
+			"nr": "9",
 			"score": 0,
 			"lives": [1, 1, 1, 1],
 			"place": "none"
 		},
 		"p10": {
-			"name": "10",
+			"name": "######",
+			"nr": "10",
 			"score": 0,
 			"lives": [1, 1, 1, 1],
 			"place": "none"

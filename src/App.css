@@ -25,10 +25,18 @@ body {
 	margin: 0.5em;
 	display: inline-flex;
 	flex-direction: column;
+	border-radius: 1em;
+	border: transparent;
+	border-style: solid;
 }
-.player_container_off {
+.player_container_on {
 	display: inline-flex;
 	flex-direction: column;
+	border-radius: 1em;
+	border: #ffffff;
+	border-style: solid;
+
+	margin: 0.5em;
 }
 
 .player {
@@ -41,14 +49,20 @@ body {
 	margin: auto;
 	color: #ffffff;
 	font-family: 'Roboto', sans-serif;
-	font-size: 5em;
-	margin-top: 0.4em;
+	font-size: 2.5em;
 }
+.nr {
+	margin-top: 0.2em;
+	padding-bottom: 0.2em;
+}
+.name {
+	margin-top: 0.2em;
+}
+
 .points {
 	color: #ffffff;
-	font-size: 2em;
+	font-size: 4em;
 	margin: auto;
-	padding: 0.2em;
 }
 
 .timer {
