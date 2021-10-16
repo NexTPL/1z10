@@ -35,8 +35,11 @@ body {
 	border-radius: 1em;
 	border: #ffffff;
 	border-style: solid;
-
 	margin: 0.5em;
+}
+.player_container_off {
+	display: inline-flex;
+	flex-direction: column;
 }
 
 .player {
