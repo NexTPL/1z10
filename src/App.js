@@ -41,7 +41,7 @@ function App() {
 		if (e.which === 48 && !running) c_player = Players.p10;
 		// Run
 		if (e.which === 17 && !isTimerRunning && c_player !== undefined) {
-			time = 1;
+			time = 10;
 			timer_id = setInterval(timer, 1000);
 			isTimerRunning = true;
 			running = true;
