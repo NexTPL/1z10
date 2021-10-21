@@ -28,20 +28,22 @@ intro.loop = true;
 function App() {
 	const [PlayerData, NewPlayerData] = useState(Players);
 	window.onkeyup = function (e) {
-		// Players
-		if (e.which === 49 && !running) c_player = Players.p1;
-		if (e.which === 50 && !running) c_player = Players.p2;
-		if (e.which === 51 && !running) c_player = Players.p3;
-		if (e.which === 52 && !running) c_player = Players.p4;
-		if (e.which === 53 && !running) c_player = Players.p5;
-		if (e.which === 54 && !running) c_player = Players.p6;
-		if (e.which === 55 && !running) c_player = Players.p7;
-		if (e.which === 56 && !running) c_player = Players.p8;
-		if (e.which === 57 && !running) c_player = Players.p9;
-		if (e.which === 48 && !running) c_player = Players.p10;
+		if (!running || l_players <= 3) {
+			// Players
+			if (e.which === 49) c_player = Players.p1;
+			if (e.which === 50) c_player = Players.p2;
+			if (e.which === 51) c_player = Players.p3;
+			if (e.which === 52) c_player = Players.p4;
+			if (e.which === 53) c_player = Players.p5;
+			if (e.which === 54) c_player = Players.p6;
+			if (e.which === 55) c_player = Players.p7;
+			if (e.which === 56) c_player = Players.p8;
+			if (e.which === 57) c_player = Players.p9;
+			if (e.which === 48) c_player = Players.p10;
+		}
 		// Run
 		if (e.which === 17 && !isTimerRunning && c_player !== undefined) {
-			time = 10;
+			time = 1;
 			timer_id = setInterval(timer, 1000);
 			isTimerRunning = true;
 			running = true;
@@ -132,7 +134,7 @@ function App() {
 					break;
 			}
 			if (l_player.lives.length !== 0) {
-				l_player.score = (l_player.lives.length - 1) * 10;
+				l_player.score = l_player.lives.length - 1;
 				l_player.lives = [1, 1, 1, 1];
 			}
 		}

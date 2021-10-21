@@ -1,0 +1,24 @@
+Etap I
+Ten etap rozpoczyna się wstępnymi eliminacjami chętnych uczestników w celu wyłonienia szczęśliwej dziesiątki która weźmie udział w drugim etapie.
+
+Etap II
+Każdy uczestnik rozpoczyna grę z trzema „szansami” (reprezentowanymi przez trzy lampki przy wirtulanym pulpicie gracza). Szansę traci się, nie odpowiadając na pytanie poprawnie w ciągu 10 sekund lub podając odpowiedź błędną. Zawsze pod uwagę bierze się pierwszą wypowiedzianą w całości odpowiedź.
+
+Pierwsze pytanie tej rundy prowadzący kieruje do zawodnika przy stanowisku nr 1. Jeśli uczestnik odpowie poprawnie, to zyskuje prawo do wyznaczania; jeśli nie, to traci szansę, a prowadzący pyta kolejnych graczy tak długo, aż ktoś odpowie poprawnie i zdobędzie prawo wyznaczania.
+
+Zgodnie z regulaminem teleturnieju pierwszy gracz, który otrzyma prawo typowania musi wybrać zawodnika znajdującego się po przeciwnej stronie studia, tj. zawodnicy z numerami 1–5 wyznaczają uczestników z numerami 6–10, a uczestnicy z numerami 6–10 wyznaczają zawodników z numerami 1–5[e]. Zasada ta obowiązuje tylko podczas pierwszego wyznaczania. W dalszej części nie ma żadnych ograniczeń co do wyznaczania.
+
+Kolejne pytania zadawane są uczestnikom wskazanym przez osobę, która jako ostatnia udzieliła poprawnej odpowiedzi. Jeżeli wyznaczony zawodnik nie odpowie na swoje pytanie poprawnie, to dotychczasowy wyznaczający wskazuje dalej, a jeśli udzieli właściwej odpowiedzi, to przejmuje prawo do wyznaczania. Gra toczy się tym sposobem tak długo, aż w grze pozostanie troje zawodników. Trójka ta przechodzi do rundy finałowej 
+
+Etap III (finał)
+W tym etapie każdy finalista dostaje trzy nowe szanse i tyle punktów, ile szans zachował po drugim etapie.
+
+Pierwsze pytania prowadzący kieruje do wszystkich uczestników. Zawodnicy zgłaszają się do nich, podnosząc rękę (odpowiada tylko ten, kto zgłosi się najszybciej). Za dobrą odpowiedź finalista dostaje 10 punktów, a za błędną traci szansę. Jeśli nikt się nie zgłosi do odpowiedzi, to nikt nie traci szansy. Gracz, który jako pierwszy udzieli trzech prawidłowych odpowiedzi (i tym samym zdobędzie 30 punktów) otrzymuje prawo do wyznaczania kolejnego pytanego, podobnie jak w drugim etapie.
+
+Gracz wyznaczony do odpowiedzi może zyskać dziesięć punktów lub stracić jedną szansę. Jeśli po wzięciu pytania „na siebie” zawodnik odpowie źle (bądź wcale), to gracze znowu zgłaszają się do odpowiedzi sposobem „kto pierwszy, ten lepszy”, a prawo wyznaczania otrzymują już po jednej poprawnej odpowiedzi.
+
+Gra kończy się:
+	gdy prowadzący zada wszystkie pytania
+	gdy odpanie ostatni uczestnik
+
+Zwycięzcą zostaje uczestnik z największą liczbą punktów
