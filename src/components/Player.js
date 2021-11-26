@@ -1,14 +1,14 @@
 import '../App.css';
-import Live from './Live.js';
+import Life from './Life.js';
 import Counter from './Counter.js';
 
 function Player(props) {
 	if (props.left > 3) {
 		return (
 			<div className='player'>
-				<Live live={props.player.lives[3]}></Live>
-				<Live live={props.player.lives[2]}></Live>
-				<Live live={props.player.lives[1]}></Live>
+				<Life life={props.player.lifes[3]}></Life>
+				<Life life={props.player.lifes[2]}></Life>
+				<Life life={props.player.lifes[1]}></Life>
 				<div className='info'>
 					<p className='name'>{props.player.name}</p>
 					<p className='nr'>{props.player.nr}</p>
@@ -23,9 +23,9 @@ function Player(props) {
 					<p className='name'>{props.player.name}</p>
 				</div>
 				<Counter score={props.player.score}></Counter>
-				<Live live={props.player.lives[3]}></Live>
-				<Live live={props.player.lives[2]}></Live>
-				<Live live={props.player.lives[1]}></Live>
+				<Life life={props.player.lifes[3]}></Life>
+				<Life life={props.player.lifes[2]}></Life>
+				<Life life={props.player.lifes[1]}></Life>
 			</div>
 		);
 	}
