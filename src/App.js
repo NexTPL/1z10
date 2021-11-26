@@ -18,6 +18,7 @@ let timer_id = null; // id of timer
 let c_place = 10; // current place to set
 let running = false;
 let LastGoodAnswer; // player with last good answer
+let setTime = 1; // player defined time
 const intro = new Audio(intro_sound);
 const good = new Audio(good_sound);
 const bad = new Audio(bad_sound);
@@ -43,9 +44,9 @@ function App() {
 			if (e.which === 48) c_player = Players[10]; // 10
 		}
 		// Run
-		if (e.which === 17 && !isTimerRunning && c_player !== undefined) {
+		if (e.which === 17 && e.location === 1 && !isTimerRunning && c_player !== undefined) {
 			if (c_player === LastGoodAnswer && l_players > 3) return;
-			time = 1;
+			time = setTime;
 			timer_id = setInterval(timer, 1000);
 			isTimerRunning = true;
 			running = true;
@@ -68,6 +69,11 @@ function App() {
 
 		// Input names
 		if (e.which === 18 && e.location === 2) InputNames();
+
+		// Set timer
+		if (e.which === 17 && e.location === 2) {
+			setTime = Number(prompt('Proszę podać czas odpowiedzi'));
+		}
 		update();
 	};
 

@@ -1,70 +1,13 @@
-# Getting Started with Create React App
+# Controls:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> <b>1-0 </b> - select player <br> <b>left control</b> - start timer <br><b>right control</b> - set time<br> <b>left alt</b> - play music <br> <b>right alt</b> - input names <br> <b>spacebar</b> - stop timer (good answer) <br>
 
-## Available Scripts
+# Instructions:
 
-In the project directory, you can run:
+> Firstly enter player names using the <b>right alt</b> key<br>Set time using the <b>right control</b> key<br> Start music using <b>left alt</b> key<br> Navigate using <b>1-0</b> numeric keys to select player<br> Say the question!<br> Press <b>left control</b> to start the timer<br> Make them suffer ;)<br> If the user's answer is correct and there's still time left press the <b>spacebar</b> to stop the timer<br>
 
-### `npm start`
+# Informations:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> App: Aleksander Łyskawa <br> Music: "Ralf Weigand - Final Winners A"
+>
+> [![forthebadge](https://forthebadge.com/images/badges/0-percent-optimized.svg)](https://forthebadge.com) <br> [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) <br> [![forthebadge](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTMuNSIgaGVpZ2h0PSIzNSIgdmlld0JveD0iMCAwIDE1My41IDM1Ij48cmVjdCBjbGFzcz0ic3ZnX19yZWN0IiB4PSIwIiB5PSIwIiB3aWR0aD0iNzMuNiIgaGVpZ2h0PSIzNSIgZmlsbD0iIzMxQzRGMyIvPjxyZWN0IGNsYXNzPSJzdmdfX3JlY3QiIHg9IjcxLjYiIHk9IjAiIHdpZHRoPSI4MS44OTk5OTk5OTk5OTk5OSIgaGVpZ2h0PSIzNSIgZmlsbD0iIzM4OUFENSIvPjxwYXRoIGNsYXNzPSJzdmdfX3RleHQiIGQ9Ik0xNC4wOCAxOS4xNkwxNC4wOCAxOS4xNkwxNC4wOCAxMy40N0wxNS41NiAxMy40N0wxNS41NiAxOS4xOFExNS41NiAyMC4wMyAxNS45OSAyMC40OFExNi40MyAyMC45MyAxNy4yNyAyMC45M0wxNy4yNyAyMC45M1ExOC45OCAyMC45MyAxOC45OCAxOS4xM0wxOC45OCAxOS4xM0wxOC45OCAxMy40N0wyMC40NiAxMy40N0wyMC40NiAxOS4xN1EyMC40NiAyMC41MyAxOS41OSAyMS4zMlExOC43MiAyMi4xMiAxNy4yNyAyMi4xMkwxNy4yNyAyMi4xMlExNS44MSAyMi4xMiAxNC45NCAyMS4zM1ExNC4wOCAyMC41NSAxNC4wOCAxOS4xNlpNMjQuNTkgMTkuNDJMMjQuNTkgMTkuNDJMMjYuMDggMTkuNDJRMjYuMDggMjAuMTUgMjYuNTYgMjAuNTVRMjcuMDQgMjAuOTUgMjcuOTMgMjAuOTVMMjcuOTMgMjAuOTVRMjguNzEgMjAuOTUgMjkuMTAgMjAuNjNRMjkuNDkgMjAuMzIgMjkuNDkgMTkuODBMMjkuNDkgMTkuODBRMjkuNDkgMTkuMjQgMjkuMDkgMTguOTRRMjguNzAgMTguNjMgMjcuNjYgMTguMzJRMjYuNjMgMTguMDEgMjYuMDIgMTcuNjNMMjYuMDIgMTcuNjNRMjQuODYgMTYuOTAgMjQuODYgMTUuNzJMMjQuODYgMTUuNzJRMjQuODYgMTQuNjkgMjUuNzAgMTQuMDJRMjYuNTQgMTMuMzUgMjcuODggMTMuMzVMMjcuODggMTMuMzVRMjguNzcgMTMuMzUgMjkuNDcgMTMuNjhRMzAuMTcgMTQuMDEgMzAuNTYgMTQuNjFRMzAuOTYgMTUuMjIgMzAuOTYgMTUuOTZMMzAuOTYgMTUuOTZMMjkuNDkgMTUuOTZRMjkuNDkgMTUuMjkgMjkuMDcgMTQuOTFRMjguNjUgMTQuNTQgMjcuODcgMTQuNTRMMjcuODcgMTQuNTRRMjcuMTQgMTQuNTQgMjYuNzQgMTQuODVRMjYuMzQgMTUuMTYgMjYuMzQgMTUuNzFMMjYuMzQgMTUuNzFRMjYuMzQgMTYuMTggMjYuNzcgMTYuNTBRMjcuMjEgMTYuODEgMjguMjAgMTcuMTBRMjkuMjAgMTcuNDAgMjkuODAgMTcuNzhRMzAuNDEgMTguMTYgMzAuNjkgMTguNjVRMzAuOTcgMTkuMTMgMzAuOTcgMTkuNzlMMzAuOTcgMTkuNzlRMzAuOTcgMjAuODYgMzAuMTUgMjEuNDlRMjkuMzMgMjIuMTIgMjcuOTMgMjIuMTJMMjcuOTMgMjIuMTJRMjcuMDEgMjIuMTIgMjYuMjMgMjEuNzdRMjUuNDYgMjEuNDMgMjUuMDIgMjAuODNRMjQuNTkgMjAuMjIgMjQuNTkgMTkuNDJaTTM2LjgyIDIyTDM1LjM1IDIyTDM1LjM1IDEzLjQ3TDM2LjgyIDEzLjQ3TDM2LjgyIDIyWk00My4xMiAyMkw0MS42MyAyMkw0MS42MyAxMy40N0w0My4xMiAxMy40N0w0Ni45MyAxOS41NEw0Ni45MyAxMy40N0w0OC40MCAxMy40N0w0OC40MCAyMkw0Ni45MiAyMkw0My4xMiAxNS45NUw0My4xMiAyMlpNNTIuODkgMTguMTNMNTIuODkgMTguMTNMNTIuODkgMTcuNDZRNTIuODkgMTUuNTMgNTMuODIgMTQuNDRRNTQuNzUgMTMuMzUgNTYuNDAgMTMuMzVMNTYuNDAgMTMuMzVRNTcuODMgMTMuMzUgNTguNjcgMTQuMDVRNTkuNTAgMTQuNzYgNTkuNjcgMTYuMDhMNTkuNjcgMTYuMDhMNTguMjIgMTYuMDhRNTcuOTggMTQuNTQgNTYuNDMgMTQuNTRMNTYuNDMgMTQuNTRRNTUuNDQgMTQuNTQgNTQuOTIgMTUuMjZRNTQuNDAgMTUuOTggNTQuMzggMTcuMzdMNTQuMzggMTcuMzdMNTQuMzggMTguMDJRNTQuMzggMTkuNDAgNTQuOTcgMjAuMTdRNTUuNTUgMjAuOTMgNTYuNTkgMjAuOTNMNTYuNTkgMjAuOTNRNTcuNzIgMjAuOTMgNTguMjAgMjAuNDJMNTguMjAgMjAuNDJMNTguMjAgMTguNzVMNTYuNDUgMTguNzVMNTYuNDUgMTcuNjJMNTkuNjggMTcuNjJMNTkuNjggMjAuODlRNTkuMjIgMjEuNTAgNTguNDAgMjEuODFRNTcuNTggMjIuMTIgNTYuNTMgMjIuMTJMNTYuNTMgMjIuMTJRNTUuNDYgMjIuMTIgNTQuNjQgMjEuNjNRNTMuODEgMjEuMTQgNTMuMzYgMjAuMjRRNTIuOTEgMTkuMzMgNTIuODkgMTguMTNaIiBmaWxsPSIjRkZGRkZGIi8+PHBhdGggY2xhc3M9InN2Z19fdGV4dCIgZD0iTTg4LjE3IDIyTDg1Ljc5IDIyTDg1Ljc5IDEzLjYwTDg5LjYzIDEzLjYwUTkwLjc3IDEzLjYwIDkxLjYxIDEzLjk4UTkyLjQ1IDE0LjM1IDkyLjkxIDE1LjA2UTkzLjM2IDE1Ljc2IDkzLjM2IDE2LjcxTDkzLjM2IDE2LjcxUTkzLjM2IDE3LjYyIDkyLjk0IDE4LjMwUTkyLjUxIDE4Ljk4IDkxLjcyIDE5LjM2TDkxLjcyIDE5LjM2TDkzLjUzIDIyTDkwLjk5IDIyTDg5LjQ2IDE5Ljc3TDg4LjE3IDE5Ljc3TDg4LjE3IDIyWk04OC4xNyAxNS40N0w4OC4xNyAxNy45M0w4OS40OSAxNy45M1E5MC4yMiAxNy45MyA5MC41OSAxNy42MVE5MC45NiAxNy4yOSA5MC45NiAxNi43MUw5MC45NiAxNi43MVE5MC45NiAxNi4xMiA5MC41OSAxNS43OVE5MC4yMiAxNS40NyA4OS40OSAxNS40N0w4OS40OSAxNS40N0w4OC4xNyAxNS40N1pNMTA0LjkwIDIyTDk4LjE1IDIyTDk4LjE1IDEzLjYwTDEwNC43NCAxMy42MEwxMDQuNzQgMTUuNDRMMTAwLjUxIDE1LjQ0TDEwMC41MSAxNi44NUwxMDQuMjQgMTYuODVMMTA0LjI0IDE4LjYzTDEwMC41MSAxOC42M0wxMDAuNTEgMjAuMTdMMTA0LjkwIDIwLjE3TDEwNC45MCAyMlpNMTExLjEyIDIyTDEwOC42OSAyMkwxMTIuNDAgMTMuNjBMMTE0Ljc0IDEzLjYwTDExOC40NiAyMkwxMTUuOTkgMjJMMTE1LjMzIDIwLjM3TDExMS43OCAyMC4zN0wxMTEuMTIgMjJaTTExMy41NiAxNS45M0wxMTIuNDcgMTguNjFMMTE0LjYzIDE4LjYxTDExMy41NiAxNS45M1pNMTIyLjE5IDE3LjgwTDEyMi4xOSAxNy44MFExMjIuMTkgMTYuNTQgMTIyLjc4IDE1LjU0UTEyMy4zOCAxNC41NSAxMjQuNDMgMTMuOTlRMTI1LjQ5IDEzLjQzIDEyNi44MCAxMy40M0wxMjYuODAgMTMuNDNRMTI3Ljk2IDEzLjQzIDEyOC44OCAxMy44NFExMjkuODAgMTQuMjUgMTMwLjQyIDE1LjAyTDEzMC40MiAxNS4wMkwxMjguOTEgMTYuMzlRMTI4LjA5IDE1LjQwIDEyNi45MyAxNS40MEwxMjYuOTMgMTUuNDBRMTI2LjI0IDE1LjQwIDEyNS43MSAxNS43MFExMjUuMTcgMTYgMTI0Ljg4IDE2LjU0UTEyNC41OCAxNy4wOSAxMjQuNTggMTcuODBMMTI0LjU4IDE3LjgwUTEyNC41OCAxOC41MSAxMjQuODggMTkuMDVRMTI1LjE3IDE5LjYwIDEyNS43MSAxOS45MFExMjYuMjQgMjAuMjAgMTI2LjkzIDIwLjIwTDEyNi45MyAyMC4yMFExMjguMDkgMjAuMjAgMTI4LjkxIDE5LjIyTDEyOC45MSAxOS4yMkwxMzAuNDIgMjAuNThRMTI5LjgxIDIxLjM1IDEyOC44OCAyMS43NlExMjcuOTYgMjIuMTcgMTI2LjgwIDIyLjE3TDEyNi44MCAyMi4xN1ExMjUuNDkgMjIuMTcgMTI0LjQzIDIxLjYxUTEyMy4zOCAyMS4wNSAxMjIuNzggMjAuMDVRMTIyLjE5IDE5LjA2IDEyMi4xOSAxNy44MFpNMTM2Ljc1IDE1LjQ4TDEzNC4xNiAxNS40OEwxMzQuMTYgMTMuNjBMMTQxLjY5IDEzLjYwTDE0MS42OSAxNS40OEwxMzkuMTIgMTUuNDhMMTM5LjEyIDIyTDEzNi43NSAyMkwxMzYuNzUgMTUuNDhaIiBmaWxsPSIjRkZGRkZGIiB4PSI4NC42Ii8+PC9zdmc+)](https://forthebadge.com)
