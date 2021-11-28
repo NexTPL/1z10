@@ -12,9 +12,8 @@ import PlayerContainer from './components/PlayerContainer';
 let Players = Data.players;
 let c_player; // current player
 let l_players = 10; // number of players
-let isTimerRunning = false;
 let time = 0; // current time
-let timer_id = null; // id of timer
+let timer_interval = null; // id of timer
 let c_place = 10; // current place to set
 let running = false;
 let LastGoodAnswer; // player with last good answer
@@ -44,20 +43,18 @@ function App() {
 			if (e.which === 48) c_player = Players[10]; // 10
 		}
 		// Run
-		if (e.which === 17 && e.location === 1 && !isTimerRunning && c_player !== undefined) {
+		if (e.which === 17 && e.location === 1 && !running && c_player !== undefined) {
 			if (c_player === LastGoodAnswer && l_players > 3) return;
 			time = setTime;
-			timer_id = setInterval(timer, 1000);
-			isTimerRunning = true;
+			timer_interval = setInterval(timer, 100);
 			running = true;
 
 			update();
 		}
 		// Good Answer
-		if (e.which === 32 && isTimerRunning) {
+		if (e.which === 32 && running) {
 			LastGoodAnswer = c_player;
-			clearInterval(timer_id);
-			isTimerRunning = false;
+			clearInterval(timer_interval);
 			running = false;
 			if (l_players <= 3) c_player.score += 10;
 			time = 0;
@@ -87,11 +84,11 @@ function App() {
 
 	// Timer
 	const timer = () => {
-		time--;
+		time -= 0.1;
 		update();
-		if (time === 0) {
-			isTimerRunning = false;
-			clearInterval(timer_id);
+		if (time <= 0) {
+			time = 0;
+			clearInterval(timer_interval);
 			removeLife();
 			bad.play();
 		}
@@ -142,18 +139,18 @@ function App() {
 			<video src={video} autoPlay loop muted className='video'></video>
 			<div className='App'>
 				<div className='players'>
-					<PlayerContainer left={l_players} player={PlayerData[1]} c_player={c_player}></PlayerContainer>
-					<PlayerContainer left={l_players} player={PlayerData[2]} c_player={c_player}></PlayerContainer>
-					<PlayerContainer left={l_players} player={PlayerData[3]} c_player={c_player}></PlayerContainer>
-					<PlayerContainer left={l_players} player={PlayerData[4]} c_player={c_player}></PlayerContainer>
-					<PlayerContainer left={l_players} player={PlayerData[5]} c_player={c_player}></PlayerContainer>
-					<PlayerContainer left={l_players} player={PlayerData[6]} c_player={c_player}></PlayerContainer>
-					<PlayerContainer left={l_players} player={PlayerData[7]} c_player={c_player}></PlayerContainer>
-					<PlayerContainer left={l_players} player={PlayerData[8]} c_player={c_player}></PlayerContainer>
-					<PlayerContainer left={l_players} player={PlayerData[9]} c_player={c_player}></PlayerContainer>
-					<PlayerContainer left={l_players} player={PlayerData[10]} c_player={c_player}></PlayerContainer>
+					<PlayerContainer left={l_players} player={PlayerData[1]} c_player={c_player} />
+					<PlayerContainer left={l_players} player={PlayerData[2]} c_player={c_player} />
+					<PlayerContainer left={l_players} player={PlayerData[3]} c_player={c_player} />
+					<PlayerContainer left={l_players} player={PlayerData[4]} c_player={c_player} />
+					<PlayerContainer left={l_players} player={PlayerData[5]} c_player={c_player} />
+					<PlayerContainer left={l_players} player={PlayerData[6]} c_player={c_player} />
+					<PlayerContainer left={l_players} player={PlayerData[7]} c_player={c_player} />
+					<PlayerContainer left={l_players} player={PlayerData[8]} c_player={c_player} />
+					<PlayerContainer left={l_players} player={PlayerData[9]} c_player={c_player} />
+					<PlayerContainer left={l_players} player={PlayerData[10]} c_player={c_player} />
 				</div>
-				<Timer time={time}></Timer>
+				<Timer time={time.toFixed(1)} />
 			</div>
 		</div>
 	);

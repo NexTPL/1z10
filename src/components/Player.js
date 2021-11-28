@@ -6,9 +6,9 @@ function Player(props) {
 	if (props.left > 3) {
 		return (
 			<div className='player'>
-				<Life life={props.player.lifes[3]}></Life>
-				<Life life={props.player.lifes[2]}></Life>
-				<Life life={props.player.lifes[1]}></Life>
+				<Life life={props.player.lifes[3]} />
+				<Life life={props.player.lifes[2]} />
+				<Life life={props.player.lifes[1]} />
 				<div className='info'>
 					<p className='name'>{props.player.name}</p>
 					<p className='nr'>{props.player.nr}</p>
@@ -22,10 +22,10 @@ function Player(props) {
 					<p className='nr'>{props.player.nr}</p>
 					<p className='name'>{props.player.name}</p>
 				</div>
-				<Counter score={props.player.score}></Counter>
-				<Life life={props.player.lifes[3]}></Life>
-				<Life life={props.player.lifes[2]}></Life>
-				<Life life={props.player.lifes[1]}></Life>
+				<Counter score={props.player.score} />
+				<Life life={props.player.lifes[3]} />
+				<Life life={props.player.lifes[2]} />
+				<Life life={props.player.lifes[1]} />
 			</div>
 		);
 	}
