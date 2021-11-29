@@ -1,0 +1,12 @@
+.timer {
+	background-color: rgba(0, 0, 0, 0.5);
+	font-family: 'Roboto', sans-serif;
+	color: #ffffff;
+	font-size: 13em;
+	width: 100%;
+	position: fixed;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 20%;
+	backdrop-filter: blur(8px);
+}

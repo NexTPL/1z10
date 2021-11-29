@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import './App.css';
-import Timer from './components/Timer.js';
+import Timer from './components/Timer/Timer.js';
 import Data from './Data.json';
 import intro_sound from './audio/intro.mp3';
 import good_sound from './audio/good.mp3';
 import bad_sound from './audio/bad.mp3';
 import nolifes_sound from './audio/nolifes.mp3';
 import bg from './video/bg.mp4';
-import PlayerContainer from './components/PlayerContainer';
+import PlayerContainer from './components/PlayerContainer/PlayerContainer';
 
 let Players = Data.players;
 let c_player; // current player
@@ -18,11 +18,13 @@ let c_place = 10; // current place to set
 let running = false;
 let LastGoodAnswer; // player with last good answer
 let setTime = 1; // player defined time
+
 const intro = new Audio(intro_sound);
 const good = new Audio(good_sound);
 const bad = new Audio(bad_sound);
 const no_lifes = new Audio(nolifes_sound);
 const video = bg;
+
 intro.volume = 0.5;
 intro.loop = true;
 
@@ -68,16 +70,21 @@ function App() {
 		if (e.which === 18 && e.location === 2) InputNames();
 
 		// Set timer
-		if (e.which === 17 && e.location === 2) {
-			setTime = Number(prompt('Proszę podać czas odpowiedzi'));
-		}
+		if (e.which === 17 && e.location === 2) SetTimer();
 		update();
 	};
 
+	const SetTimer = () => {
+		const timer_prompt = prompt('Proszę podać czas odpowiedzi');
+		const timer_reg = /^[0-9]*(\.[0-9]*)?$/;
+		timer_reg.test(timer_prompt) ? (setTime = Number(timer_prompt)) : alert('To fajna liczba...');
+		return;
+	};
+
 	const InputNames = () => {
-		const Names = prompt('Proszę podać imiona dzieląc je ", "');
+		const Names = prompt('Proszę podać imiona dzieląc je " "');
 		if (Names === null) return;
-		const splitNames = Names.split(', ');
+		const splitNames = Names.split(' ');
 		for (let i = 1; i <= 10; i++) Players[i].name = splitNames[i - 1];
 		update();
 	};
@@ -150,7 +157,7 @@ function App() {
 					<PlayerContainer left={l_players} player={PlayerData[9]} c_player={c_player} />
 					<PlayerContainer left={l_players} player={PlayerData[10]} c_player={c_player} />
 				</div>
-				<Timer time={time.toFixed(1)} />
+				<Timer time={time} />
 			</div>
 		</div>
 	);

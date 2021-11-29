@@ -1,0 +1,22 @@
+.player_container {
+	margin: 0.5em;
+	display: inline-flex;
+	flex-direction: column;
+	border-radius: 0.5em;
+	border: transparent;
+	border-style: solid;
+	backdrop-filter: blur(8px);
+}
+.player_container_on {
+	display: inline-flex;
+	flex-direction: column;
+	border-radius: 0.5em;
+	border: #ffffff;
+	border-style: solid;
+	margin: 0.5em;
+	backdrop-filter: blur(8px);
+}
+.player_container_off {
+	display: inline-flex;
+	flex-direction: column;
+}

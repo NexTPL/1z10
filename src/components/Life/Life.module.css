@@ -1,0 +1,23 @@
+.life {
+	display: inline-flex;
+	width: 2.5em;
+	height: 4em;
+	border-radius: 0.2em;
+	margin: 0.2em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	background-color: #47b62b;
+}
+
+.no_life {
+	display: inline-flex;
+	width: 2.5em;
+	height: 4em;
+	border-radius: 0.2em;
+	margin: 0.2em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	background-color: #47b62b;
+
+	background-color: #474747;
+}
