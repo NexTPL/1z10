@@ -25,9 +25,6 @@ const bad = new Audio(bad_sound);
 const no_lifes = new Audio(nolifes_sound);
 const video = bg;
 
-intro.volume = 0.5;
-intro.loop = true;
-
 function App() {
 	const [PlayerData, NewPlayerData] = useState(Players);
 	window.onkeyup = function (e) {
