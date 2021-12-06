@@ -10,13 +10,13 @@ function Player(props) {
 			<Life life={props.player.lifes[1]} />
 			<div className={styles.info}>
 				<p className={styles.name}>{props.player.name}</p>
-				<p className={styles.nr}>{props.player.nr}</p>
+				<p className={styles.nr}>{props.id}</p>
 			</div>
 		</div>
 	) : (
 		<div className={styles.player}>
 			<div className={styles.info}>
-				<p className={styles.nr}>{props.player.nr}</p>
+				<p className={styles.nr}>{props.id}</p>
 				<p className={styles.name}>{props.player.name}</p>
 			</div>
 			<Counter score={props.player.score} />

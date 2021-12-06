@@ -3,7 +3,7 @@ import styles from './PlayerContainer.module.css';
 function PlayerContainer(props) {
 	return props.player.lifes.length !== 0 || props.player.place <= 3 ? (
 		<div className={props.c_player === props.player && props.player.lifes.length !== 0 ? styles.player_container_on : styles.player_container}>
-			<Player left={props.left} player={props.player} />
+			<Player left={props.left} player={props.player} id={props.id} />
 		</div>
 	) : (
 		<div className={styles.player_container_off}></div>
