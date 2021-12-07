@@ -2,61 +2,61 @@
 	{
 		"name": "######",
 		"score": 0,
-		"lifes": [1, 1, 1, 1],
-		"place": null
+		"lifes": [1, 1, 1],
+		"eliminated": false
 	},
 	{
 		"name": "######",
 		"score": 0,
-		"lifes": [1, 1, 1, 1],
-		"place": null
+		"lifes": [1, 1, 1],
+		"eliminated": false
 	},
 	{
 		"name": "######",
 		"score": 0,
-		"lifes": [1, 1, 1, 1],
-		"place": null
+		"lifes": [1, 1, 1],
+		"eliminated": false
 	},
 	{
 		"name": "######",
 		"score": 0,
-		"lifes": [1, 1, 1, 1],
-		"place": null
+		"lifes": [1, 1, 1],
+		"eliminated": false
 	},
 	{
 		"name": "######",
 		"score": 0,
-		"lifes": [1, 1, 1, 1],
-		"place": null
+		"lifes": [1, 1, 1],
+		"eliminated": false
 	},
 	{
 		"name": "######",
 		"score": 0,
-		"lifes": [1, 1, 1, 1],
-		"place": null
+		"lifes": [1, 1, 1],
+		"eliminated": false
 	},
 	{
 		"name": "######",
 		"score": 0,
-		"lifes": [1, 1, 1, 1],
-		"place": null
+		"lifes": [1, 1, 1],
+		"eliminated": false
 	},
 	{
 		"name": "######",
 		"score": 0,
-		"lifes": [1, 1, 1, 1],
-		"place": null
+		"lifes": [1, 1, 1],
+		"eliminated": false
 	},
 	{
 		"name": "######",
 		"score": 0,
-		"lifes": [1, 1, 1, 1],
-		"place": null
+		"lifes": [1, 1, 1],
+		"eliminated": false
 	},
 	{
 		"name": "######",
 		"score": 0,
-		"lifes": [1, 1, 1, 1],
-		"place": null
+		"lifes": [1, 1, 1],
+		"eliminated": false
 	}
 ]
