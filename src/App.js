@@ -1,23 +1,23 @@
 import { useState } from 'react';
 import './App.css';
 import Timer from './components/Timer/Timer.js';
-import Data from './Data.json';
+import PlayerContainer from './components/PlayerContainer/PlayerContainer';
 import intro_sound from './audio/intro.mp3';
 import good_sound from './audio/good.mp3';
 import bad_sound from './audio/bad.mp3';
 import nolifes_sound from './audio/nolifes.mp3';
 import bg from './video/bg.mp4';
-import PlayerContainer from './components/PlayerContainer/PlayerContainer';
+import Data from './Data';
 
-let Players = Data.players;
-let c_player; // current player
-let l_players = 10; // number of players
-let time = 0; // current time
-let timer_interval = null; // id of timer
-let c_place = 10; // current place to set
+let l_players = 10;
+let TempData = Data;
+let c_player = undefined;
+let DisplayTime = 0;
+let setTime = 1;
+let timer_interval;
 let running = false;
-let LastGoodAnswer; // player with last good answer
-let setTime = 1; // player defined time
+let LastGoodAnswer = undefined;
+let m30points = false;
 
 const intro = new Audio(intro_sound);
 const good = new Audio(good_sound);
@@ -26,49 +26,72 @@ const no_lifes = new Audio(nolifes_sound);
 const video = bg;
 
 function App() {
-	const [PlayerData, NewPlayerData] = useState(Players);
-	window.onkeyup = function (e) {
-		if (!running || l_players <= 3) {
-			// Players
-			if (e.which === 49) c_player = Players[1]; // 1
-			if (e.which === 50) c_player = Players[2]; // 2
-			if (e.which === 51) c_player = Players[3]; // 3
-			if (e.which === 52) c_player = Players[4]; // 4
-			if (e.which === 53) c_player = Players[5]; // 5
-			if (e.which === 54) c_player = Players[6]; // 6
-			if (e.which === 55) c_player = Players[7]; // 7
-			if (e.which === 56) c_player = Players[8]; // 8
-			if (e.which === 57) c_player = Players[9]; // 9
-			if (e.which === 48) c_player = Players[10]; // 10
-		}
-		// Run
-		if (e.which === 17 && e.location === 1 && !running && c_player !== undefined) {
-			if (c_player === LastGoodAnswer && l_players > 3) return;
-			time = setTime;
-			timer_interval = setInterval(timer, 100);
-			running = true;
+	const [Data, setData] = useState(TempData);
 
-			update();
+	window.onkeyup = function (e) {
+		// Players
+		if (!running || l_players <= 3) {
+			if (e.which === 49) c_player = TempData[0]; // 1
+			if (e.which === 50) c_player = TempData[1]; // 2
+			if (e.which === 51) c_player = TempData[2]; // 3
+			if (e.which === 52) c_player = TempData[3]; // 4
+			if (e.which === 53) c_player = TempData[4]; // 5
+			if (e.which === 54) c_player = TempData[5]; // 6
+			if (e.which === 55) c_player = TempData[6]; // 7
+			if (e.which === 56) c_player = TempData[7]; // 8
+			if (e.which === 57) c_player = TempData[8]; // 9
+			if (e.which === 48) c_player = TempData[9]; // 10
+		}
+
+		// Run
+		if (e.which === 17 && e.location === 1 && c_player !== undefined) {
+			if (!running) {
+				if (c_player === LastGoodAnswer && l_players > 3) return;
+				DisplayTime = setTime;
+				timer_interval = setInterval(timer, 100);
+				running = true;
+			} else {
+				DisplayTime = 0;
+			}
+
+			Update();
 		}
 		// Good Answer
 		if (e.which === 32 && running) {
-			LastGoodAnswer = c_player;
 			clearInterval(timer_interval);
 			running = false;
-			if (l_players <= 3) c_player.score += 10;
-			time = 0;
+			if (l_players <= 3) {
+				c_player.score += 10;
+				if (m30points) {
+					LastGoodAnswer = c_player;
+				} else {
+					if (c_player.score >= 30) {
+						m30points = true;
+						LastGoodAnswer = c_player;
+					} else {
+						c_player = LastGoodAnswer;
+					}
+				}
+			} else {
+				LastGoodAnswer = c_player;
+			}
+			DisplayTime = 0;
 			good.play();
-			update();
+			Update();
 		}
-		// Play intro
+
 		if (e.which === 18 && e.location === 1) intro.play();
-
-		// Input names
 		if (e.which === 18 && e.location === 2) InputNames();
-
-		// Set timer
 		if (e.which === 17 && e.location === 2) SetTimer();
-		update();
+		Update();
+	};
+
+	const InputNames = () => {
+		const Names = prompt('Proszę podać imiona dzieląc je " "');
+		if (Names === null) return;
+		const splitNames = Names.split(' ');
+		for (let i = 0; i < 10; i++) TempData[i].name = splitNames[i];
+		Update();
 	};
 
 	const SetTimer = () => {
@@ -78,64 +101,57 @@ function App() {
 		return;
 	};
 
-	const InputNames = () => {
-		const Names = prompt('Proszę podać imiona dzieląc je " "');
-		if (Names === null) return;
-		const splitNames = Names.split(' ');
-		for (let i = 1; i <= 10; i++) Players[i].name = splitNames[i - 1];
-		update();
+	// Remove life
+	const RemoveLife = () => {
+		if (c_player.lifes.length === 0) return;
+		if (c_player === LastGoodAnswer) LastGoodAnswer = undefined; // check last good answer and set it to undefined
+		c_player.lifes.shift();
+		bad.play();
+		if (c_player.lifes.length === 0) {
+			setTimeout(() => {
+				if (l_players === 4) ChangeRound();
+				l_players--;
+				no_lifes.play();
+				c_player.eliminated = true;
+				Update();
+			}, 1000);
+		}
+		Update();
+	};
+
+	const ChangeRound = () => {
+		for (let i = 9; i >= 0; i--) {
+			if (TempData[i].lifes.length === 0) {
+				TempData.splice(i, 1);
+			} else {
+				TempData[i].score = TempData[i].lifes.length;
+				TempData[i].lifes = [1, 1, 1];
+			}
+		}
+		setTimeout(() => {
+			c_player = undefined;
+			LastGoodAnswer = undefined;
+		}, 1000);
 	};
 
 	// Timer
 	const timer = () => {
-		time -= 0.1;
-		update();
-		if (time <= 0) {
-			time = 0;
+		DisplayTime -= 0.1;
+		if (DisplayTime <= 0) {
+			DisplayTime = 0;
 			clearInterval(timer_interval);
-			removeLife();
-			bad.play();
-		}
-	};
-
-	// Remove life
-	const removeLife = () => {
-		c_player.lifes.shift(); // remove life
-		if (c_player === LastGoodAnswer) LastGoodAnswer = undefined; // check last good answer and set it to undefined
-		if (c_player.lifes.length === 1 && c_player.place === 'none') {
-			// check for player deletion
-			c_player.place = c_place; // set player's place
+			running = false;
+			RemoveLife();
 			setTimeout(() => {
-				no_lifes.play();
-				c_player.lifes.shift(); // remove last live
-				if (c_place === 4) {
-					convertLTP();
-				}
-				c_place--;
-				l_players--;
-				update();
+				c_player = LastGoodAnswer;
+				Update();
 			}, 1000);
 		}
-		setTimeout(() => {
-			running = false;
-			c_player = LastGoodAnswer;
-			update();
-		}, 1000);
-		update();
+		Update();
 	};
 
-	// Convert to poitns
-	const convertLTP = () => {
-		for (let i = 1; i <= 10; i++) {
-			if (Players[i].lifes.length !== 0) {
-				Players[i].score = Players[i].lifes.length - 1;
-				Players[i].lifes = [1, 1, 1, 1];
-			}
-		}
-	};
-
-	const update = () => {
-		NewPlayerData({ ...Players });
+	const Update = () => {
+		setData([...TempData]);
 	};
 
 	return (
@@ -143,18 +159,12 @@ function App() {
 			<video src={video} autoPlay loop muted className='video'></video>
 			<div className='App'>
 				<div className='players'>
-					<PlayerContainer left={l_players} player={PlayerData[1]} c_player={c_player} />
-					<PlayerContainer left={l_players} player={PlayerData[2]} c_player={c_player} />
-					<PlayerContainer left={l_players} player={PlayerData[3]} c_player={c_player} />
-					<PlayerContainer left={l_players} player={PlayerData[4]} c_player={c_player} />
-					<PlayerContainer left={l_players} player={PlayerData[5]} c_player={c_player} />
-					<PlayerContainer left={l_players} player={PlayerData[6]} c_player={c_player} />
-					<PlayerContainer left={l_players} player={PlayerData[7]} c_player={c_player} />
-					<PlayerContainer left={l_players} player={PlayerData[8]} c_player={c_player} />
-					<PlayerContainer left={l_players} player={PlayerData[9]} c_player={c_player} />
-					<PlayerContainer left={l_players} player={PlayerData[10]} c_player={c_player} />
+					{Data.map((ID) => (
+						<PlayerContainer left={l_players} player={ID} c_player={c_player} key={Data.indexOf(ID)} id={Data.indexOf(ID) + 1} />
+					))}
 				</div>
-				<Timer time={time} />
+
+				<Timer time={DisplayTime} />
 			</div>
 		</div>
 	);
