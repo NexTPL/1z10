@@ -17,6 +17,7 @@ let setTime = 1;
 let timer_interval;
 let running = false;
 let LastGoodAnswer = undefined;
+let m30points = false;
 
 const intro = new Audio(intro_sound);
 const good = new Audio(good_sound);
@@ -57,10 +58,23 @@ function App() {
 		}
 		// Good Answer
 		if (e.which === 32 && running) {
-			LastGoodAnswer = c_player;
 			clearInterval(timer_interval);
 			running = false;
-			if (l_players <= 3) c_player.score += 10;
+			if (l_players <= 3) {
+				c_player.score += 10;
+				if (m30points) {
+					LastGoodAnswer = c_player;
+				} else {
+					if (c_player.score >= 30) {
+						m30points = true;
+						LastGoodAnswer = c_player;
+					} else {
+						c_player = LastGoodAnswer;
+					}
+				}
+			} else {
+				LastGoodAnswer = c_player;
+			}
 			DisplayTime = 0;
 			good.play();
 			Update();
@@ -110,10 +124,14 @@ function App() {
 			if (TempData[i].lifes.length === 0) {
 				TempData.splice(i, 1);
 			} else {
-				TempData[i].score = TempData[i].lifes.length - 1;
+				TempData[i].score = TempData[i].lifes.length;
 				TempData[i].lifes = [1, 1, 1];
 			}
 		}
+		setTimeout(() => {
+			c_player = undefined;
+			LastGoodAnswer = undefined;
+		}, 1000);
 	};
 
 	// Timer
