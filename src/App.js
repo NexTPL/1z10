@@ -9,7 +9,7 @@ import nolifes_sound from './audio/nolifes.mp3';
 import bg from './video/bg.mp4';
 import Data from './Data';
 
-let l_players = 10;
+let l_players = 4;
 let TempData = Data;
 let c_player = undefined;
 let DisplayTime = 0;
@@ -18,6 +18,7 @@ let timer_interval;
 let running = false;
 let LastGoodAnswer = undefined;
 let m30points = false;
+let introPlayed = false;
 
 const intro = new Audio(intro_sound);
 const good = new Audio(good_sound);
@@ -44,7 +45,7 @@ function App() {
 		}
 
 		// Run
-		if (e.which === 17 && e.location === 1 && c_player !== undefined) {
+		if (e.which === 17 && e.location === 1) {
 			if (!running) {
 				if (c_player === LastGoodAnswer && l_players > 3) return;
 				DisplayTime = setTime;
@@ -57,7 +58,7 @@ function App() {
 			Update();
 		}
 		// Good Answer
-		if (e.which === 32 && running) {
+		if (e.which === 32 && running && c_player !== undefined) {
 			clearInterval(timer_interval);
 			running = false;
 			if (l_players <= 3) {
@@ -80,7 +81,10 @@ function App() {
 			Update();
 		}
 
-		if (e.which === 18 && e.location === 1) intro.play();
+		if (e.which === 18 && e.location === 1 && introPlayed === false) {
+			intro.play();
+			introPlayed = true;
+		}
 		if (e.which === 18 && e.location === 2) InputNames();
 		if (e.which === 17 && e.location === 2) SetTimer();
 		Update();
@@ -103,10 +107,10 @@ function App() {
 
 	// Remove life
 	const RemoveLife = () => {
-		if (c_player.lifes.length === 0) return;
+		bad.play();
+		if (c_player === undefined || c_player.lifes.length === 0) return;
 		if (c_player === LastGoodAnswer) LastGoodAnswer = undefined; // check last good answer and set it to undefined
 		c_player.lifes.shift();
-		bad.play();
 		if (c_player.lifes.length === 0) {
 			setTimeout(() => {
 				if (l_players === 4) ChangeRound();
