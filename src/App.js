@@ -9,7 +9,7 @@ import nolifes_sound from './audio/nolifes.mp3';
 import bg from './video/bg.mp4';
 import Data from './Data';
 
-let l_players = 4;
+let l_players = 10;
 let TempData = Data;
 let c_player = undefined;
 let DisplayTime = 0;
