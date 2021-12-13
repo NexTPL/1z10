@@ -60,7 +60,6 @@ function App() {
 		// Good Answer
 		if (e.which === 32 && running && c_player !== undefined) {
 			clearInterval(timer_interval);
-			running = false;
 			if (l_players <= 3) {
 				c_player.score += 10;
 				if (m30points) {
@@ -78,6 +77,7 @@ function App() {
 			}
 			DisplayTime = 0;
 			good.play();
+			running = false;
 			Update();
 		}
 
@@ -144,10 +144,10 @@ function App() {
 		if (DisplayTime <= 0) {
 			DisplayTime = 0;
 			clearInterval(timer_interval);
-			running = false;
 			RemoveLife();
 			setTimeout(() => {
 				c_player = LastGoodAnswer;
+				running = false;
 				Update();
 			}, 1000);
 		}
