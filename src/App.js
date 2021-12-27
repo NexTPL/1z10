@@ -86,7 +86,8 @@ function App() {
 			introPlayed = true;
 		}
 		if (e.which === 18 && e.location === 2) InputNames();
-		if (e.which === 17 && e.location === 2) SetTimer();
+		if ((e.which === 17 && e.location === 2) || (e.which === 93 && e.location === 2)) SetTimer();
+		if (e.which === 13) AddLife();
 		Update();
 	};
 
@@ -103,6 +104,15 @@ function App() {
 		const timer_reg = /^[0-9]*(\.[0-9]*)?$/;
 		timer_reg.test(timer_prompt) ? (setTime = Number(timer_prompt)) : alert('To fajna liczba...');
 		return;
+	};
+
+	const AddLife = () => {
+		if (c_player === undefined || c_player.lifes.length > 2) return;
+		if (c_player.eliminated === true) {
+			c_player.eliminated = false;
+			l_players++;
+		}
+		c_player.lifes.push(1);
 	};
 
 	// Remove life
