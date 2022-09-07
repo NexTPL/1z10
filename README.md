@@ -10,4 +10,4 @@
 
 > App: Aleksander Łyskawa <br> Music: "Ralf Weigand - Final Winners A"
 >
-> [![forthebadge](https://forthebadge.com/images/badges/0-percent-optimized.svg)](https://forthebadge.com) <br> [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
+> [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
